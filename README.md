@@ -89,3 +89,9 @@ This is built as an **Upwork portfolio piece**, not a live production gym site. 
 ## VERSION 1 
 - V.0.1.0.0
 - TILL NOW FIVE LAN MADE 
+## DEPLOYED
+-RENDER because it moslty depends on the backend server so i used render for this.
+
+## LOGIN [ADMIN,MD PASSWORDS]
+- ADMIN PASSWORD - 1234
+- MD PASSWORD - Praveen@2804
