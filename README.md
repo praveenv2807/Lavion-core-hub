@@ -1,7 +1,8 @@
 # Lavion Core Hub — Phase 1
 
 Homepage build: cinematic canvas frame-by-frame entrance + multilingual layer (10 languages) + core homepage sections.
-
+##LINK TO USE WEBSITE
+https://lavion-core-hub.onrender.com
 ## Run it
 No build step. Open in VS Code and use the **Live Server** extension (right-click `index.html` → "Open with Live Server"), or run:
 
