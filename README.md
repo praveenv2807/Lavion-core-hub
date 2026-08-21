@@ -86,4 +86,6 @@ This is built as an **Upwork portfolio piece**, not a live production gym site. 
 - New pages (trainers/gallery/testimonials/schedule/admin) are **English only** — the homepage has full 10-language support, but extending i18n to these pages means adding `data-i18n` attributes + new keys in each `assets/i18n/*.json` file.
 - Gallery images are styled placeholder blocks with labels — swap in real or licensed stock photos per the instructions further up this README.
 - Trainer photos are still empty gradient blocks.
-
+## VERSION 1 
+- V.0.1.0.0
+- TILL NOW FIVE LAN MADE 
