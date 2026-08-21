@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials — Lavion Core Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<nav id="nav" class="visible scrolled">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div class="nav-links">
+    <a href="index.html#about" data-i18n="nav_about">About</a>
+    <a href="index.html#programs" data-i18n="nav_programs">Programs</a>
+    <a href="trainers.html" data-i18n="nav_trainers">Coaches</a>
+    <div class="nav-more-wrap">
+      <button type="button" class="nav-more-btn" id="moreBtn" aria-haspopup="true" aria-expanded="false">
+        <span data-i18n="nav_more">More</span>
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-more-menu" id="moreMenu" role="menu">
+        <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+        <a href="schedule.html" data-i18n="nav_schedule">Schedule</a>
+        <a href="testimonials.html" data-i18n="nav_testimonials">Testimonials</a>
+        <a href="workout-plans.html" data-i18n="nav_workoutplans">Workout Plans</a>
+        <a href="nutrition.html" data-i18n="nav_nutrition">Nutrition</a>
+      </div>
+    </div>
+    <a href="index.html#membership" data-i18n="nav_membership">Membership</a>
+    <a href="index.html#contact" data-i18n="nav_contact">Visit</a>
+  </div>
+  <button type="button" class="nav-toggle-btn" id="navToggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-right">
+    <div id="lang-switch">
+      <button id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <span>EN</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div id="lang-menu" role="menu"></div>
+    </div>
+    <a class="nav-login-btn" href="login.html" aria-label="Sign In" title="Sign In">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </a>
+    <a class="nav-cta" href="index.html#membership" data-i18n="nav_join">Join Now</a>
+  </div>
+</nav>
+
+<header class="page-header wrap">
+  <a href="index.html" class="back-btn" onclick="if(window.history.length>1){history.back();return false;}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-i18n="back_btn">Back</span></a>
+  <span class="eyebrow" data-i18n="testi_page_eyebrow">Testimonials</span>
+  <h1 data-i18n="testi_page_title">What members actually say.</h1>
+  <p data-i18n="testi_page_sub">Fictional testimonials written for this demo — swap with real member feedback once the site goes live.</p>
+</header>
+
+<section class="panel wrap" style="padding-top:0;">
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-quote" data-i18n="testi1_quote">"First gym where a coach actually corrected my deadlift setup before I hurt myself."</div>
+      <div class="testi-who"><div class="testi-avatar">RK</div><div><div class="testi-name">Rahul K.</div><div class="testi-role" data-i18n="testi1_role">Coached Member, 8 months</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote" data-i18n="testi2_quote">"The Recovery Bay alone is worth the membership. My mobility work used to be an afterthought."</div>
+      <div class="testi-who"><div class="testi-avatar">SP</div><div><div class="testi-name">Sara P.</div><div class="testi-role" data-i18n="testi2_role">All Access Member, 1 year</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote" data-i18n="testi3_quote">"Conditioning Line got me back into race shape faster than any program I've tried on my own."</div>
+      <div class="testi-who"><div class="testi-avatar">AM</div><div><div class="testi-name">Arjun M.</div><div class="testi-role" data-i18n="testi3_role">Coached Member, 5 months</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote" data-i18n="testi4_quote">"Small class sizes mean the coach actually knows your name and your numbers."</div>
+      <div class="testi-who"><div class="testi-avatar">DL</div><div><div class="testi-name">Divya L.</div><div class="testi-role" data-i18n="testi4_role">Floor Access Member, 3 months</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote" data-i18n="testi5_quote">"Open at 4:30am and it's never once been closed when the site says it's open. Rare."</div>
+      <div class="testi-who"><div class="testi-avatar">VN</div><div><div class="testi-name">Vikram N.</div><div class="testi-role" data-i18n="testi5_role">All Access Member, 2 years</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote" data-i18n="testi6_quote">"Booked a free session expecting a sales pitch. Got an actual movement assessment instead."</div>
+      <div class="testi-who"><div class="testi-avatar">PJ</div><div><div class="testi-name">Priya J.</div><div class="testi-role" data-i18n="testi6_role">New Member</div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div>© 2026 Lavion Core Hub. All rights reserved.</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

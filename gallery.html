@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Lavion Core Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<nav id="nav" class="visible scrolled">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div class="nav-links">
+    <a href="index.html#about" data-i18n="nav_about">About</a>
+    <a href="index.html#programs" data-i18n="nav_programs">Programs</a>
+    <a href="trainers.html" data-i18n="nav_trainers">Coaches</a>
+    <div class="nav-more-wrap">
+      <button type="button" class="nav-more-btn" id="moreBtn" aria-haspopup="true" aria-expanded="false">
+        <span data-i18n="nav_more">More</span>
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-more-menu" id="moreMenu" role="menu">
+        <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+        <a href="schedule.html" data-i18n="nav_schedule">Schedule</a>
+        <a href="testimonials.html" data-i18n="nav_testimonials">Testimonials</a>
+        <a href="workout-plans.html" data-i18n="nav_workoutplans">Workout Plans</a>
+        <a href="nutrition.html" data-i18n="nav_nutrition">Nutrition</a>
+      </div>
+    </div>
+    <a href="index.html#membership" data-i18n="nav_membership">Membership</a>
+    <a href="index.html#contact" data-i18n="nav_contact">Visit</a>
+  </div>
+  <button type="button" class="nav-toggle-btn" id="navToggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-right">
+    <div id="lang-switch">
+      <button id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <span>EN</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div id="lang-menu" role="menu"></div>
+    </div>
+    <a class="nav-login-btn" href="login.html" aria-label="Sign In" title="Sign In">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </a>
+    <a class="nav-cta" href="index.html#membership" data-i18n="nav_join">Join Now</a>
+  </div>
+</nav>
+
+<header class="page-header wrap">
+  <a href="index.html" class="back-btn" onclick="if(window.history.length>1){history.back();return false;}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-i18n="back_btn">Back</span></a>
+  <span class="eyebrow" data-i18n="gallery_eyebrow">Gallery</span>
+  <h1 data-i18n="gallery_title">The floor, in detail.</h1>
+  <p data-i18n="gallery_sub">A look at the equipment and spaces across Lavion Core Hub — from the strength platforms to the recovery bay.</p>
+</header>
+
+<section class="panel wrap" style="padding-top:0;">
+
+  <div class="gallery-cat">
+    <h2 data-i18n="cat_strength_floor">Strength Floor</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="assets/images/gallery/competition-platforms.jpg" alt="Competition Platforms"><span data-i18n="gal_competition_platforms">Competition Platforms</span></div>
+      <div class="gallery-item"><img src="assets/images/gallery/power-rack-row.jpg" alt="Power Rack Row"><span data-i18n="gal_power_rack_row">Power Rack Row</span></div>
+      <div class="gallery-item"><img src="assets/images/gallery/free-weight-section.jpg" alt="Free Weight Section"><span data-i18n="gal_free_weight_section">Free Weight Section</span></div>
+      <div class="gallery-item"><img src="assets/images/gallery/specialty-bars.jpg" alt="Specialty Bars"><span data-i18n="gal_specialty_bars">Specialty Bars</span></div>
+      <div class="gallery-item"><img src="assets/images/gallery/plate-loaded-machines.jpg" alt="Plate-Loaded Machines"><span data-i18n="gal_plate_loaded_machines">Plate-Loaded Machines</span></div>
+      <div class="gallery-item"><img src="assets/images/gallery/chalk-warmup-area.jpg" alt="Chalk & Warm-up Area"><span data-i18n="gal_chalk_warmup">Chalk & Warm-up Area</span></div>
+    </div>
+  </div>
+
+  <div class="gallery-cat">
+    <h2 data-i18n="cat_conditioning_circuit">Conditioning Circuit</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="assets/images/gallery/rotating-sled-track.jpg" alt="Rotating Sled Track"><span data-i18n="gal_rotating_sled">Rotating Sled Track</span></div>
+      <div class="gallery-item"><img src="assets/images/gallery/rowers-bikes.jpg" alt="Rowers & Bikes"><span data-i18n="gal_rowers_bikes">Rowers & Bikes</span></div>
+      <div class="gallery-item"><img src="assets/images/gallery/battle-ropes-bay.jpg" alt="Battle Ropes Bay"><span data-i18n="gal_battle_ropes">Battle Ropes Bay</span></div>
+    </div>
+  </div>
+
+  <div class="gallery-cat">
+    <h2 data-i18n="cat_recovery_bay">Recovery Bay</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="assets/images/gallery/cold-immersion-pods.jpg" alt="Cold Immersion Pods"><span data-i18n="gal_cold_immersion">Cold Immersion Pods</span></div>
+      <div class="gallery-item"><img src="assets/images/gallery/mobility-stretch-studio.jpg" alt="Mobility & Stretch Studio"><span data-i18n="gal_mobility_studio">Mobility & Stretch Studio</span></div>
+      <div class="gallery-item"><img src="assets/images/gallery/locker-lounge.jpg" alt="Locker & Lounge"><span data-i18n="gal_locker_lounge">Locker & Lounge</span></div>
+    </div>
+  </div>
+
+</section>
+
+<footer class="wrap">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div>© 2026 Lavion Core Hub. All rights reserved.</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

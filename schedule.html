@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule — Lavion Core Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<nav id="nav" class="visible scrolled">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div class="nav-links">
+    <a href="index.html#about" data-i18n="nav_about">About</a>
+    <a href="index.html#programs" data-i18n="nav_programs">Programs</a>
+    <a href="trainers.html" data-i18n="nav_trainers">Coaches</a>
+    <div class="nav-more-wrap">
+      <button type="button" class="nav-more-btn" id="moreBtn" aria-haspopup="true" aria-expanded="false">
+        <span data-i18n="nav_more">More</span>
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-more-menu" id="moreMenu" role="menu">
+        <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+        <a href="schedule.html" data-i18n="nav_schedule">Schedule</a>
+        <a href="testimonials.html" data-i18n="nav_testimonials">Testimonials</a>
+        <a href="workout-plans.html" data-i18n="nav_workoutplans">Workout Plans</a>
+        <a href="nutrition.html" data-i18n="nav_nutrition">Nutrition</a>
+      </div>
+    </div>
+    <a href="index.html#membership" data-i18n="nav_membership">Membership</a>
+    <a href="index.html#contact" data-i18n="nav_contact">Visit</a>
+  </div>
+  <button type="button" class="nav-toggle-btn" id="navToggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-right">
+    <div id="lang-switch">
+      <button id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <span>EN</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div id="lang-menu" role="menu"></div>
+    </div>
+    <a class="nav-login-btn" href="login.html" aria-label="Sign In" title="Sign In">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </a>
+    <a class="nav-cta" href="index.html#membership" data-i18n="nav_join">Join Now</a>
+  </div>
+</nav>
+
+<header class="page-header wrap">
+  <a href="index.html" class="back-btn" onclick="if(window.history.length>1){history.back();return false;}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-i18n="back_btn">Back</span></a>
+  <span class="eyebrow" data-i18n="sched_eyebrow">Schedule</span>
+  <div class="demo-badge" data-i18n="sched_demo_badge">Demo booking — no real reservation is made</div>
+  <h1 data-i18n="sched_title">Book a class.</h1>
+  <p data-i18n="sched_sub">Pick a program and a slot below. This is a fully working front-end booking flow — for a live site, confirmed bookings would sync to a real backend and send confirmation emails.</p>
+</header>
+
+<section class="panel wrap" style="padding-top:0;">
+  <div class="filter-row" id="filterRow">
+    <div class="filter-chip active" data-filter="all" data-i18n="filter_all">All Programs</div>
+    <div class="filter-chip" data-filter="Strength Forge">Strength Forge</div>
+    <div class="filter-chip" data-filter="Conditioning Line">Conditioning Line</div>
+    <div class="filter-chip" data-filter="Recovery Bay">Recovery Bay</div>
+  </div>
+
+  <div class="sched-toolbar">
+    <div class="week-nav">
+      <button id="prevWeek" aria-label="Previous week">&larr;</button>
+      <div class="week-label" id="weekLabel">This Week</div>
+      <button id="nextWeek" aria-label="Next week">&rarr;</button>
+    </div>
+  </div>
+
+  <div class="day-grid" id="dayGrid"></div>
+</section>
+
+<!-- Booking modal -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal-box">
+    <button class="modal-close" id="bookingClose">&times;</button>
+
+    <div class="modal-step active" id="bookStep1">
+      <h3 data-i18n="booking_confirm_title">Confirm your slot</h3>
+      <div class="sub" id="bookSummary"></div>
+      <div class="form-row"><label data-i18n="form_fullname">Full name</label><input type="text" id="bookName" placeholder="Your name"></div>
+      <div class="form-row"><label data-i18n="form_email">Email</label><input type="email" id="bookEmail" placeholder="you@email.com"></div>
+      <button class="modal-btn" id="bookConfirm" data-i18n="btn_confirm_booking">Confirm Booking</button>
+    </div>
+
+    <div class="modal-step" id="bookStep2">
+      <div class="success-icon">✓</div>
+      <h3 style="text-align:center;" data-i18n="booking_confirmed_title">Booking confirmed</h3>
+      <p class="sub" style="text-align:center;" data-i18n="booking_confirmed_sub">A confirmation would normally be emailed here. This is a demo — nothing was actually reserved.</p>
+      <button class="modal-btn ghost" id="bookDone">Close</button>
+    </div>
+  </div>
+</div>
+
+<footer class="wrap">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div>© 2026 Lavion Core Hub. All rights reserved.</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/schedule.js"></script>
+</body>
+</html>

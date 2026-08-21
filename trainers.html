@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coaches — Lavion Core Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<nav id="nav" class="visible scrolled">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div class="nav-links">
+    <a href="index.html#about" data-i18n="nav_about">About</a>
+    <a href="index.html#programs" data-i18n="nav_programs">Programs</a>
+    <a href="trainers.html" data-i18n="nav_trainers">Coaches</a>
+    <div class="nav-more-wrap">
+      <button type="button" class="nav-more-btn" id="moreBtn" aria-haspopup="true" aria-expanded="false">
+        <span data-i18n="nav_more">More</span>
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-more-menu" id="moreMenu" role="menu">
+        <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+        <a href="schedule.html" data-i18n="nav_schedule">Schedule</a>
+        <a href="testimonials.html" data-i18n="nav_testimonials">Testimonials</a>
+        <a href="workout-plans.html" data-i18n="nav_workoutplans">Workout Plans</a>
+        <a href="nutrition.html" data-i18n="nav_nutrition">Nutrition</a>
+      </div>
+    </div>
+    <a href="index.html#membership" data-i18n="nav_membership">Membership</a>
+    <a href="index.html#contact" data-i18n="nav_contact">Visit</a>
+  </div>
+  <button type="button" class="nav-toggle-btn" id="navToggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-right">
+    <div id="lang-switch">
+      <button id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <span>EN</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div id="lang-menu" role="menu"></div>
+    </div>
+    <a class="nav-login-btn" href="login.html" aria-label="Sign In" title="Sign In">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </a>
+    <a class="nav-cta" href="index.html#membership" data-i18n="nav_join">Join Now</a>
+  </div>
+</nav>
+
+<header class="page-header wrap">
+  <a href="index.html" class="back-btn" onclick="if(window.history.length>1){history.back();return false;}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-i18n="back_btn">Back</span></a>
+  <span class="eyebrow" data-i18n="trainers_eyebrow">Coaches</span>
+  <h1 data-i18n="trainers_title">People who watch your form, not the clock.</h1>
+  <p data-i18n="trainers_page_sub">Every coach at Lavion Core Hub programs, watches, and adjusts in real time. No one here is running a class off a script.</p>
+</header>
+
+<section class="panel wrap">
+  <div class="trainer-full-grid">
+
+    <div class="trainer-full">
+      <div class="photo"><img src="assets/images/trainers/dara-osei.jpg" alt="Dara Osei"></div>
+      <div>
+        <h2>Dara Osei</h2>
+        <div class="role" data-i18n="trainer1_role">Strength Forge Lead</div>
+        <p>Dara has spent the last nine years coaching raw and equipped powerlifters, with three athletes qualifying for national meets under her programming. She believes technique work is not optional groundwork — it's the actual training.</p>
+        <p>Outside of coaching, Dara competes in the 84kg raw division and writes Lavion's internal strength-programming templates used across every Strength Forge block.</p>
+        <div class="tag-row"><span class="tag" data-i18n="tag_powerlifting">Powerlifting</span><span class="tag" data-i18n="tag_barbell_technique">Barbell Technique</span><span class="tag" data-i18n="tag_programming">Programming</span></div>
+      </div>
+    </div>
+
+    <div class="trainer-full">
+      <div class="photo"><img src="assets/images/trainers/marcus-wren.jpg" alt="Marcus Wren"></div>
+      <div>
+        <h2>Marcus Wren</h2>
+        <div class="role" data-i18n="trainer2_role">Conditioning Coach</div>
+        <p>Marcus built his coaching approach around one idea: conditioning should be measurable, not miserable. His Conditioning Line sessions are built around specific engine metrics — not just "go hard."</p>
+        <p>Before Lavion, Marcus coached collegiate track athletes and holds certifications in applied exercise physiology.</p>
+        <div class="tag-row"><span class="tag" data-i18n="tag_interval_training">Interval Training</span><span class="tag" data-i18n="tag_metabolic_conditioning">Metabolic Conditioning</span><span class="tag" data-i18n="tag_sport_specific_prep">Sport-Specific Prep</span></div>
+      </div>
+    </div>
+
+    <div class="trainer-full">
+      <div class="photo"><img src="assets/images/trainers/recovery-coach.jpg" alt="Owen Calder"></div>
+      <div>
+        <h2>Owen Calder</h2>
+        <div class="role" data-i18n="trainer3_role">Recovery & Mobility</div>
+        <p>Owen leads Recovery Bay sessions with a background in physiotherapy, focusing on the mobility restrictions that quietly cap people's lifts and running form long before pain shows up.</p>
+        <p>He runs Lavion's cold immersion protocol and consults one-on-one for members working around old injuries.</p>
+        <div class="tag-row"><span class="tag" data-i18n="tag_mobility">Mobility</span><span class="tag" data-i18n="tag_injury_prevention">Injury Prevention</span><span class="tag" data-i18n="tag_cold_immersion">Cold Immersion</span></div>
+      </div>
+    </div>
+
+    <div class="trainer-full">
+      <div class="photo"><img src="assets/images/trainers/theo-aldana.jpg" alt="Theo Aldana"></div>
+      <div>
+        <h2>Theo Aldana</h2>
+        <div class="role" data-i18n="trainer4_role">Head Coach</div>
+        <p>Theo oversees programming across all three tracks at Lavion and personally onboards every new member with a movement assessment before they're placed into a program.</p>
+        <p>With over fifteen years coaching strength and conditioning, Theo's approach is unglamorous by design: consistent load progression, honest feedback, and long-term thinking over quick wins.</p>
+        <div class="tag-row"><span class="tag" data-i18n="tag_program_design">Program Design</span><span class="tag" data-i18n="tag_movement_assessment">Movement Assessment</span><span class="tag" data-i18n="tag_athlete_development">Athlete Development</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div>© 2026 Lavion Core Hub. All rights reserved.</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — Lavion Core Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<style>
+  body.login-body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
+    background:radial-gradient(120% 90% at 50% 0%, #1a1815 0%, #0B0A08 60%);}
+  .login-card{width:100%;max-width:420px;background:rgba(19,18,16,0.72);backdrop-filter:blur(24px) saturate(160%);
+    -webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid rgba(244,239,230,0.12);
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);padding:44px 38px;}
+  .login-logo{display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:10px;font-family:var(--display);font-size:1.4rem;}
+  .login-logo .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  .login-card h1{text-align:center;font-size:1.7rem;margin-bottom:6px;}
+  .login-sub{text-align:center;color:var(--mist);font-size:0.9rem;margin-bottom:26px;}
+  .role-tabs{display:flex;border:1px solid var(--line);margin-bottom:26px;}
+  .role-tab{flex:1;text-align:center;padding:12px 8px;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.05em;font-weight:600;cursor:pointer;color:var(--mist);transition:all .2s;}
+  .role-tab:not(:last-child){border-right:1px solid var(--line);}
+  .role-tab.active{color:var(--gold);background:rgba(196,155,88,0.08);}
+  .login-error{display:none;background:rgba(200,60,60,0.12);border:1px solid rgba(200,60,60,0.4);color:#e8a3a3;
+    font-size:0.85rem;padding:12px 14px;margin-bottom:18px;}
+  .login-error.show{display:block;}
+  .login-btn{width:100%;padding:14px;background:var(--gold);color:#160b06;font-weight:700;text-transform:uppercase;font-size:0.82rem;letter-spacing:0.05em;margin-top:6px;}
+  .login-back{display:block;text-align:center;margin-top:22px;font-size:0.82rem;color:var(--mist);}
+  .login-back:hover{color:var(--gold-bright);}
+  .demo-note{margin-top:24px;border-top:1px solid var(--line);padding-top:16px;font-size:0.76rem;color:var(--mist);line-height:1.6;text-align:center;}
+</style>
+</head>
+<body class="login-body">
+
+<div class="login-card">
+  <div class="login-logo"><span class="dot"></span>Lavion Core Hub</div>
+  <h1>Sign In</h1>
+  <p class="login-sub">Choose your role to continue</p>
+
+  <div class="role-tabs" id="roleTabs">
+    <div class="role-tab active" data-role="member">Member</div>
+    <div class="role-tab" data-role="admin">Admin</div>
+    <div class="role-tab" data-role="md">MD</div>
+  </div>
+
+  <div class="login-error" id="loginError">Incorrect password. Try again.</div>
+
+  <form id="loginForm">
+    <div class="form-row">
+      <label>Email</label>
+      <input type="email" id="loginEmail" placeholder="you@email.com" required>
+    </div>
+    <div class="form-row">
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="••••••••" required>
+    </div>
+    <button type="submit" class="login-btn">Sign In</button>
+  </form>
+
+  <a href="index.html" class="login-back">← Back to site</a>
+
+  <div class="demo-note">
+    Demo login for portfolio purposes — not real authentication. Credentials are checked in the browser, not on a secure server.
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var currentRole = "member";
+  var CREDENTIALS = { admin: "1234", md: "Praveen@2804" }; // demo only — not secure, visible in page source
+
+  var tabs = document.querySelectorAll(".role-tab");
+  var errorBox = document.getElementById("loginError");
+  var passwordField = document.getElementById("loginPassword");
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (t) { t.classList.remove("active"); });
+      tab.classList.add("active");
+      currentRole = tab.getAttribute("data-role");
+      errorBox.classList.remove("show");
+      passwordField.placeholder = currentRole === "member" ? "Any password (demo)" : "••••••••";
+    });
+  });
+
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var email = document.getElementById("loginEmail").value.trim();
+    var password = passwordField.value;
+    errorBox.classList.remove("show");
+
+    if (currentRole === "member") {
+      if (!email || !password) { errorBox.textContent = "Please enter an email and password."; errorBox.classList.add("show"); return; }
+      sessionStorage.setItem("lavion_role", "member");
+      sessionStorage.setItem("lavion_email", email);
+      window.location.href = "member-portal.html";
+      return;
+    }
+
+    var required = CREDENTIALS[currentRole];
+    if (password !== required) {
+      errorBox.textContent = "Incorrect password. Try again.";
+      errorBox.classList.add("show");
+      return;
+    }
+    sessionStorage.setItem("lavion_role", currentRole);
+    sessionStorage.setItem("lavion_email", email || (currentRole + "@lavioncorehub.demo"));
+    window.location.href = "admin.html";
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Member Portal — Lavion Core Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<style>
+  .portal-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:20px;}
+  .logout-btn{border:1px solid var(--line);padding:10px 18px;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.05em;font-weight:600;}
+  .logout-btn:hover{border-color:var(--gold);color:var(--gold);}
+  .portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;}
+  .portal-card{border:1px solid var(--line);padding:28px 26px;}
+  .portal-card h3{font-size:1.1rem;font-family:var(--body);font-weight:700;text-transform:none;margin-bottom:14px;}
+  .portal-card p{color:var(--mist);font-size:0.9rem;line-height:1.6;margin-bottom:16px;}
+  .portal-card a.action{display:inline-block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.05em;font-weight:700;color:var(--gold);}
+  .portal-card a.action:hover{color:var(--gold-bright);}
+  @media(max-width:700px){.portal-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<script>
+  // Runs immediately, before the page renders, to avoid flashing member content to non-members
+  (function () {
+    if (sessionStorage.getItem("lavion_role") !== "member") window.location.href = "login.html";
+  })();
+</script>
+
+<nav id="nav" class="visible scrolled">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div class="nav-right">
+    <a class="nav-cta" href="login.html" id="logoutLink">Sign Out</a>
+  </div>
+</nav>
+
+<header class="page-header wrap">
+  <div class="demo-badge">Demo member portal — no real account data behind this</div>
+  <h1 id="welcomeMsg">Welcome back.</h1>
+  <p>This is a placeholder member dashboard to show the logged-in experience. A real version would show your actual bookings, membership status, and progress history.</p>
+</header>
+
+<section class="panel wrap" style="padding-top:0;">
+  <div class="portal-grid">
+    <div class="portal-card">
+      <h3>Your Membership</h3>
+      <p>Plan: <b style="color:var(--bone);">Coached</b> (demo placeholder)<br>Status: <b style="color:var(--gold);">Active</b></p>
+      <a class="action" href="index.html#membership">Manage Plan →</a>
+    </div>
+    <div class="portal-card">
+      <h3>Upcoming Classes</h3>
+      <p>No classes booked yet in this demo session. Book one from the schedule to see it appear here in a real build.</p>
+      <a class="action" href="schedule.html">Book a Class →</a>
+    </div>
+    <div class="portal-card">
+      <h3>Your Workout Plan</h3>
+      <p>View the sample weekly structure for your track — Strength Forge, Conditioning Line, or Recovery Bay.</p>
+      <a class="action" href="workout-plans.html">View Plans →</a>
+    </div>
+    <div class="portal-card">
+      <h3>Nutrition Guide</h3>
+      <p>General reference meal plans matched to your training track.</p>
+      <a class="action" href="nutrition.html">View Nutrition →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="logo"><span class="dot"></span>Lavion Core Hub</div>
+  <div>© 2026 Lavion Core Hub. All rights reserved.</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+(function () {
+  "use strict";
+  var email = sessionStorage.getItem("lavion_email") || "member";
+  var name = email.split("@")[0];
+  document.getElementById("welcomeMsg").textContent = "Welcome back, " + name + ".";
+
+  document.getElementById("logoutLink").addEventListener("click", function (e) {
+    e.preventDefault();
+    sessionStorage.removeItem("lavion_role");
+    sessionStorage.removeItem("lavion_email");
+    window.location.href = "login.html";
+  });
+})();
+</script>
+</body>
+</html>

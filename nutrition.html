@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutrition — Lavion Core Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<nav id="nav" class="visible scrolled">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div class="nav-links">
+    <a href="index.html#about" data-i18n="nav_about">About</a>
+    <a href="index.html#programs" data-i18n="nav_programs">Programs</a>
+    <a href="trainers.html" data-i18n="nav_trainers">Coaches</a>
+    <div class="nav-more-wrap">
+      <button type="button" class="nav-more-btn" id="moreBtn" aria-haspopup="true" aria-expanded="false">
+        <span data-i18n="nav_more">More</span>
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-more-menu" id="moreMenu" role="menu">
+        <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+        <a href="schedule.html" data-i18n="nav_schedule">Schedule</a>
+        <a href="testimonials.html" data-i18n="nav_testimonials">Testimonials</a>
+        <a href="workout-plans.html" data-i18n="nav_workoutplans">Workout Plans</a>
+        <a href="nutrition.html" data-i18n="nav_nutrition">Nutrition</a>
+      </div>
+    </div>
+    <a href="index.html#membership" data-i18n="nav_membership">Membership</a>
+    <a href="index.html#contact" data-i18n="nav_contact">Visit</a>
+  </div>
+  <button type="button" class="nav-toggle-btn" id="navToggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-right">
+    <div id="lang-switch">
+      <button id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <span>EN</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div id="lang-menu" role="menu"></div>
+    </div>
+    <a class="nav-login-btn" href="login.html" aria-label="Sign In" title="Sign In">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </a>
+    <a class="nav-cta" href="index.html#membership" data-i18n="nav_join">Join Now</a>
+  </div>
+</nav>
+
+<header class="page-header wrap">
+  <a href="index.html" class="back-btn" onclick="if(window.history.length>1){history.back();return false;}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-i18n="back_btn">Back</span></a>
+  <span class="eyebrow" data-i18n="nutr_eyebrow">Nutrition</span>
+  <div class="demo-badge" data-i18n="nutr_demo_badge">General guidance — not personalized medical or dietary advice</div>
+  <h1 data-i18n="nutr_title">Fuel that matches the work.</h1>
+  <p data-i18n="nutr_sub">These are general starting-point examples, not prescriptions. Everyone's needs differ based on body size, activity level, health history, and goals — talk to a registered dietitian or your doctor before making significant changes to how you eat, especially if you have any medical conditions.</p>
+</header>
+
+<section class="panel wrap" style="padding-top:0;">
+  <div class="diet-grid">
+
+    <div class="diet-card">
+      <span class="goal-tag" data-i18n="prog1_mark">Strength Forge</span>
+      <h3 data-i18n="diet1_title">Building Strength</h3>
+      <p style="color:var(--mist);font-size:0.88rem;line-height:1.6;" data-i18n="diet1_desc">A higher-protein, moderate-surplus approach commonly used to support strength and muscle gain — adjust portions to your own size and goals.</p>
+      <div class="macro-row">
+        <div class="macro"><div class="v">~2,600</div><div class="l" data-i18n="macro_calories">Calories*</div></div>
+        <div class="macro"><div class="v">35%</div><div class="l" data-i18n="macro_protein">Protein</div></div>
+        <div class="macro"><div class="v">40%</div><div class="l" data-i18n="macro_carbs">Carbs</div></div>
+      </div>
+      <div class="meal-list">
+        <div class="meal"><b data-i18n="meal_breakfast">Breakfast</b><span data-i18n="meal_d1_breakfast">Oats, Greek yogurt, berries, whey</span></div>
+        <div class="meal"><b data-i18n="meal_lunch">Lunch</b><span data-i18n="meal_d1_lunch">Rice, grilled chicken or paneer, vegetables</span></div>
+        <div class="meal"><b data-i18n="meal_pretraining">Pre-training</b><span data-i18n="meal_d1_pretraining">Banana, peanut butter</span></div>
+        <div class="meal"><b data-i18n="meal_dinner">Dinner</b><span data-i18n="meal_d1_dinner">Sweet potato, fish or lentils, salad</span></div>
+      </div>
+    </div>
+
+    <div class="diet-card">
+      <span class="goal-tag" data-i18n="prog2_mark">Conditioning Line</span>
+      <h3 data-i18n="diet2_title">Endurance & Conditioning</h3>
+      <p style="color:var(--mist);font-size:0.88rem;line-height:1.6;" data-i18n="diet2_desc">Balanced carbs to fuel interval work, with enough protein to support recovery between sessions.</p>
+      <div class="macro-row">
+        <div class="macro"><div class="v">~2,200</div><div class="l" data-i18n="macro_calories">Calories*</div></div>
+        <div class="macro"><div class="v">25%</div><div class="l" data-i18n="macro_protein">Protein</div></div>
+        <div class="macro"><div class="v">50%</div><div class="l" data-i18n="macro_carbs">Carbs</div></div>
+      </div>
+      <div class="meal-list">
+        <div class="meal"><b data-i18n="meal_breakfast">Breakfast</b><span data-i18n="meal_d2_breakfast">Whole grain toast, eggs, avocado</span></div>
+        <div class="meal"><b data-i18n="meal_lunch">Lunch</b><span data-i18n="meal_d2_lunch">Quinoa bowl, grilled vegetables, chickpeas</span></div>
+        <div class="meal"><b data-i18n="meal_pretraining">Pre-training</b><span data-i18n="meal_d2_pretraining">Dates, electrolyte drink</span></div>
+        <div class="meal"><b data-i18n="meal_dinner">Dinner</b><span data-i18n="meal_d2_dinner">Brown rice, tofu or chicken, greens</span></div>
+      </div>
+    </div>
+
+    <div class="diet-card">
+      <span class="goal-tag" data-i18n="diet3_tag">General Wellness</span>
+      <h3 data-i18n="diet3_title">Everyday Balance</h3>
+      <p style="color:var(--mist);font-size:0.88rem;line-height:1.6;" data-i18n="diet3_desc">A moderate, sustainable pattern for members training a few times a week without a specific performance goal.</p>
+      <div class="macro-row">
+        <div class="macro"><div class="v">~2,000</div><div class="l" data-i18n="macro_calories">Calories*</div></div>
+        <div class="macro"><div class="v">25%</div><div class="l" data-i18n="macro_protein">Protein</div></div>
+        <div class="macro"><div class="v">45%</div><div class="l" data-i18n="macro_carbs">Carbs</div></div>
+      </div>
+      <div class="meal-list">
+        <div class="meal"><b data-i18n="meal_breakfast">Breakfast</b><span data-i18n="meal_d3_breakfast">Smoothie, oats, nut butter</span></div>
+        <div class="meal"><b data-i18n="meal_lunch">Lunch</b><span data-i18n="meal_d3_lunch">Mixed grain bowl, seasonal vegetables</span></div>
+        <div class="meal"><b data-i18n="meal_snack">Snack</b><span data-i18n="meal_d3_snack">Fruit, handful of nuts</span></div>
+        <div class="meal"><b data-i18n="meal_dinner">Dinner</b><span data-i18n="meal_d3_dinner">Grilled protein of choice, roasted vegetables</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="nutrition-note">
+    <b data-i18n="nutr_footnote_b">*Calories and macros shown are general reference points only</b> <span data-i18n="nutr_footnote_rest">— based on averages for an active adult, not calculated for any individual. Actual needs vary widely by body size, sex, age, activity level, and goals. Lavion coaches can point members toward a registered dietitian for a plan tailored to them; this page is a starting reference, not a diet plan to follow as-is.</span>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div>© 2026 Lavion Core Hub. All rights reserved.</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

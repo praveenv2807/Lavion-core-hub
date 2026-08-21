@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Lavion Core Hub — Strength, refined.</title>
+<meta name="description" content="Lavion Core Hub — a premium strength and conditioning gym.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div class="nav-links">
+    <a href="#about" data-i18n="nav_about">About</a>
+    <a href="#programs" data-i18n="nav_programs">Programs</a>
+    <a href="trainers.html" data-i18n="nav_trainers">Coaches</a>
+    <div class="nav-more-wrap">
+      <button type="button" class="nav-more-btn" id="moreBtn" aria-haspopup="true" aria-expanded="false">
+        <span data-i18n="nav_more">More</span>
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-more-menu" id="moreMenu" role="menu">
+        <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+        <a href="schedule.html" data-i18n="nav_schedule">Schedule</a>
+        <a href="testimonials.html" data-i18n="nav_testimonials">Testimonials</a>
+        <a href="workout-plans.html" data-i18n="nav_workoutplans">Workout Plans</a>
+        <a href="nutrition.html" data-i18n="nav_nutrition">Nutrition</a>
+      </div>
+    </div>
+    <a href="#membership" data-i18n="nav_membership">Membership</a>
+    <a href="#contact" data-i18n="nav_contact">Visit</a>
+  </div>
+  <button type="button" class="nav-toggle-btn" id="navToggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-right">
+    <div id="lang-switch">
+      <button id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <span>EN</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div id="lang-menu" role="menu"></div>
+    </div>
+    <a class="nav-login-btn" href="login.html" aria-label="Sign In" title="Sign In">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </a>
+    <a class="nav-cta" href="#membership" data-i18n="nav_join">Join Now</a>
+  </div>
+</nav>
+
+<!-- ============ ENTRANCE: real canvas frame-by-frame scrubber ============ -->
+<section id="entrance" aria-label="Cinematic entrance">
+  <div id="entrance-stage">
+    <canvas id="doorCanvas" aria-hidden="true"></canvas>
+
+    <div id="frameLoader">
+      <span id="loaderPct">0%</span>
+      <div class="bar"><i></i></div>
+      <span>Loading sequence</span>
+    </div>
+
+    <div class="stage-content" id="stageContent">
+      <span class="eyebrow" data-i18n="hero_eyebrow">Lavion Core Hub</span>
+      <h1 class="stage-title" data-i18n="hero_title">Strength, refined.</h1>
+      <p class="stage-sub" data-i18n="hero_sub">Scroll to walk through the door.</p>
+    </div>
+
+    <div class="scroll-cue" id="scrollCue"><span data-i18n="scroll_cue">Scroll</span><span class="line"></span></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="panel">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <span class="eyebrow" data-i18n="about_eyebrow">The Standard</span>
+      <h2 data-i18n="about_title">Precision, not noise.</h2>
+      <p data-i18n="about_body">Lavion Core Hub was built for training that feels considered — every rig, every class, every coach exists to move one number: yours.</p>
+    </div>
+    <div class="stat-block reveal">
+      <div class="stat"><div class="num" data-i18n="stat1_num">04:30</div><div class="label" data-i18n="stat1_label">Open daily</div></div>
+      <div class="stat"><div class="num" data-i18n="stat2_num">220kg+</div><div class="label" data-i18n="stat2_label">Platform load rating</div></div>
+      <div class="stat"><div class="num" data-i18n="stat3_num">18</div><div class="label" data-i18n="stat3_label">Coached programs weekly</div></div>
+      <div class="stat"><div class="num" data-i18n="stat4_num">1,200</div><div class="label" data-i18n="stat4_label">Members training on-site</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMS ============ -->
+<section id="programs" class="panel">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="programs_eyebrow">Programs</span>
+      <h2 data-i18n="programs_title">Three ways in. One direction.</h2>
+    </div>
+    <div class="card-grid reveal">
+      <div class="prog-card">
+        <span class="mark" data-i18n="prog1_mark">Strength Forge</span>
+        <div>
+          <h3 data-i18n="prog1_title">Strength Forge</h3>
+          <p data-i18n="prog1_body">Barbell-first programming built around the big lifts, coached in small blocks so your bar path actually gets watched.</p>
+        </div>
+        <span class="go" data-i18n="card_cta">View schedule</span>
+      </div>
+      <div class="prog-card">
+        <span class="mark" data-i18n="prog2_mark">Conditioning Line</span>
+        <div>
+          <h3 data-i18n="prog2_title">Conditioning Line</h3>
+          <p data-i18n="prog2_body">Interval and engine work on a rotating floor circuit, built for people training for a sport, a season, or a number on a watch.</p>
+        </div>
+        <span class="go" data-i18n="card_cta">View schedule</span>
+      </div>
+      <div class="prog-card">
+        <span class="mark" data-i18n="prog3_mark">Recovery Bay</span>
+        <div>
+          <h3 data-i18n="prog3_title">Recovery Bay</h3>
+          <p data-i18n="prog3_body">Mobility sessions, cold immersion, and coached stretch work — the part of training people skip until it costs them.</p>
+        </div>
+        <span class="go" data-i18n="card_cta">View schedule</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRAINERS ============ -->
+<section id="trainers" class="panel">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="trainers_eyebrow">Coaches</span>
+      <h2 data-i18n="trainers_title">People who watch your form, not the clock.</h2>
+    </div>
+    <div class="trainer-grid reveal">
+      <div class="trainer-card"><div class="photo"><img src="assets/images/trainers/dara-osei.jpg" alt="Dara Osei"></div><h3 data-i18n="trainer1_name">Dara Osei</h3><div class="role" data-i18n="trainer1_role">Strength Forge Lead</div></div>
+      <div class="trainer-card"><div class="photo"><img src="assets/images/trainers/marcus-wren.jpg" alt="Marcus Wren"></div><h3 data-i18n="trainer2_name">Marcus Wren</h3><div class="role" data-i18n="trainer2_role">Conditioning Coach</div></div>
+      <div class="trainer-card"><div class="photo"><img src="assets/images/trainers/recovery-coach.jpg" alt="Owen Calder"></div><h3 data-i18n="trainer3_name">Owen Calder</h3><div class="role" data-i18n="trainer3_role">Recovery & Mobility</div></div>
+      <div class="trainer-card"><div class="photo"><img src="assets/images/trainers/theo-aldana.jpg" alt="Theo Aldana"></div><h3 data-i18n="trainer4_name">Theo Aldana</h3><div class="role" data-i18n="trainer4_role">Head Coach</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEMBERSHIP ============ -->
+<section id="membership" class="panel">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow" data-i18n="membership_eyebrow">Membership</span>
+      <h2 data-i18n="membership_title">Pick your access. Cancel anytime.</h2>
+    </div>
+    <div class="plan-grid reveal">
+      <div class="plan">
+        <div class="name" data-i18n="plan1_name">Floor Access</div>
+        <div class="price">$59<span>/mo</span></div>
+        <ul><li data-i18n="plan1_f1">Open floor hours</li><li data-i18n="plan1_f2">Locker room access</li><li data-i18n="plan1_f3">1 guest pass / month</li></ul>
+        <button type="button" class="plan-btn" data-plan="Floor Access" data-price="$59/mo" data-i18n="plan_cta">Choose Plan</button>
+      </div>
+      <div class="plan featured">
+        <div class="name" data-i18n="plan2_name">Coached</div>
+        <div class="price">$119<span>/mo</span></div>
+        <ul><li data-i18n="plan2_f1">Everything in Floor Access</li><li data-i18n="plan2_f2">Unlimited coached classes</li><li data-i18n="plan2_f3">Monthly progress check-in</li></ul>
+        <button type="button" class="plan-btn" data-plan="Coached" data-price="$119/mo" data-i18n="plan_cta">Choose Plan</button>
+      </div>
+      <div class="plan">
+        <div class="name" data-i18n="plan3_name">All Access</div>
+        <div class="price">$179<span>/mo</span></div>
+        <ul><li data-i18n="plan3_f1">Everything in Coached</li><li data-i18n="plan3_f2">Recovery Bay included</li><li data-i18n="plan3_f3">Priority class booking</li></ul>
+        <button type="button" class="plan-btn" data-plan="All Access" data-price="$179/mo" data-i18n="plan_cta">Choose Plan</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="panel">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="contact_eyebrow">Visit</span>
+      <h2 data-i18n="contact_title">Come see the floor.</h2>
+      <div class="contact-list">
+        <div><b data-i18n="contact_address_label">Address</b><span data-i18n="contact_address">Unit 4, Industrial Yard Road, Coimbatore</span></div>
+        <div><b data-i18n="contact_hours_label">Hours</b><span data-i18n="contact_hours">Mon–Sat 04:30–22:00 · Sun 06:00–18:00</span></div>
+        <div><b data-i18n="contact_phone_label">Phone</b><span data-i18n="contact_phone">+91 00000 00000</span></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn-solid" href="#membership" data-i18n="cta_book">Book a Free Session</a>
+        <a class="btn-ghost" href="https://wa.me/910000000000" target="_blank" rel="noopener" data-i18n="cta_whatsapp">WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="map-block reveal" data-i18n="map_placeholder">Map embed goes here — plug in Google Maps / Mapbox with real coordinates</div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="logo"><span class="dot"></span>Lavion Core Hub</div>
+  <div data-i18n="footer_rights">© 2026 Lavion Core Hub. All rights reserved.</div>
+</footer>
+
+<!-- Checkout modal -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal-box">
+    <button class="modal-close" id="checkoutClose">&times;</button>
+
+    <div class="modal-step active" id="checkoutStep1">
+      <div class="demo-badge">Demo checkout — no real payment</div>
+      <h3>Confirm your plan</h3>
+      <div class="step-summary"><b id="checkoutPlanName">Plan</b><br><span id="checkoutPlanPrice">$0/mo</span></div>
+      <div class="form-row"><label>Full name</label><input type="text" id="checkoutName" placeholder="Your name"></div>
+      <div class="form-row"><label>Email</label><input type="email" id="checkoutEmail" placeholder="you@email.com"></div>
+      <button class="modal-btn" id="checkoutNext">Continue to Payment</button>
+    </div>
+
+    <div class="modal-step" id="checkoutStep2">
+      <h3>Payment details</h3>
+      <div class="sub">Demo form — no card data is transmitted or stored.</div>
+      <div class="form-row"><label>Card number</label><input type="text" id="ccNumber" placeholder="4242 4242 4242 4242" maxlength="19"></div>
+      <div class="form-row-split">
+        <div class="form-row"><label>Expiry</label><input type="text" id="ccExpiry" placeholder="MM/YY" maxlength="5"></div>
+        <div class="form-row"><label>CVC</label><input type="text" id="ccCvc" placeholder="123" maxlength="4"></div>
+      </div>
+      <button class="modal-btn" id="checkoutPay">Complete Signup</button>
+      <button class="modal-btn ghost" id="checkoutBack">Back</button>
+    </div>
+
+    <div class="modal-step" id="checkoutStep3">
+      <div class="success-icon">✓</div>
+      <h3 style="text-align:center;">You're in.</h3>
+      <p class="sub" style="text-align:center;">Membership confirmed — in a live version this would trigger a real charge and welcome email. This is a demo.</p>
+      <button class="modal-btn ghost" id="checkoutDone">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

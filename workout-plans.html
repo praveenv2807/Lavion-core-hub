@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workout Plans — Lavion Core Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<nav id="nav" class="visible scrolled">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div class="nav-links">
+    <a href="index.html#about" data-i18n="nav_about">About</a>
+    <a href="index.html#programs" data-i18n="nav_programs">Programs</a>
+    <a href="trainers.html" data-i18n="nav_trainers">Coaches</a>
+    <div class="nav-more-wrap">
+      <button type="button" class="nav-more-btn" id="moreBtn" aria-haspopup="true" aria-expanded="false">
+        <span data-i18n="nav_more">More</span>
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-more-menu" id="moreMenu" role="menu">
+        <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+        <a href="schedule.html" data-i18n="nav_schedule">Schedule</a>
+        <a href="testimonials.html" data-i18n="nav_testimonials">Testimonials</a>
+        <a href="workout-plans.html" data-i18n="nav_workoutplans">Workout Plans</a>
+        <a href="nutrition.html" data-i18n="nav_nutrition">Nutrition</a>
+      </div>
+    </div>
+    <a href="index.html#membership" data-i18n="nav_membership">Membership</a>
+    <a href="index.html#contact" data-i18n="nav_contact">Visit</a>
+  </div>
+  <button type="button" class="nav-toggle-btn" id="navToggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-right">
+    <div id="lang-switch">
+      <button id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        <span>EN</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div id="lang-menu" role="menu"></div>
+    </div>
+    <a class="nav-login-btn" href="login.html" aria-label="Sign In" title="Sign In">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </a>
+    <a class="nav-cta" href="index.html#membership" data-i18n="nav_join">Join Now</a>
+  </div>
+</nav>
+
+<header class="page-header wrap">
+  <a href="index.html" class="back-btn" onclick="if(window.history.length>1){history.back();return false;}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span data-i18n="back_btn">Back</span></a>
+  <span class="eyebrow" data-i18n="wp_eyebrow">Workout Plans</span>
+  <div class="demo-badge" data-i18n="wp_demo_badge">Sample programming — actual plans are adjusted by your coach</div>
+  <h1 data-i18n="wp_title">What a week actually looks like.</h1>
+  <p data-i18n="wp_sub">Every member gets a program adjusted to their level in the first assessment. These are representative weekly structures for each track, not a substitute for coach-led programming.</p>
+</header>
+
+<section class="panel wrap" style="padding-top:0;">
+
+  <div class="plan-tabs" id="planTabs">
+    <div class="plan-tab active" data-plan="strength" data-i18n="prog1_mark">Strength Forge</div>
+    <div class="plan-tab" data-plan="conditioning" data-i18n="prog2_mark">Conditioning Line</div>
+    <div class="plan-tab" data-plan="recovery" data-i18n="prog3_mark">Recovery Bay</div>
+  </div>
+
+  <!-- Strength Forge -->
+  <div class="plan-view active" id="plan-strength">
+    <div class="plan-table-wrap">
+      <table class="plan-table">
+        <thead><tr><th data-i18n="th_day">Day</th><th data-i18n="th_focus">Focus</th><th data-i18n="th_detail">Session Detail</th></tr></thead>
+        <tbody>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_mon">Mon</td><td class="focus-cell" data-label="Focus" data-i18n="focus_squat">Squat</td><td class="detail-cell" data-label="Detail">Back squat working sets, single-leg accessory, core</td></tr>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_tue">Tue</td><td class="focus-cell" data-label="Focus" data-i18n="focus_bench">Bench</td><td class="detail-cell" data-label="Detail">Bench press working sets, horizontal pull, triceps</td></tr>
+          <tr class="rest-row"><td class="day-cell" data-label="Day" data-i18n="day_wed">Wed</td><td class="focus-cell" data-label="Focus" data-i18n="focus_active_recovery">Active Recovery</td><td class="detail-cell" data-label="Detail">Optional mobility session, light walk</td></tr>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_thu">Thu</td><td class="focus-cell" data-label="Focus" data-i18n="focus_deadlift">Deadlift</td><td class="detail-cell" data-label="Detail">Deadlift working sets, hip hinge accessory, back</td></tr>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_fri">Fri</td><td class="focus-cell" data-label="Focus" data-i18n="focus_overhead_press">Overhead Press</td><td class="detail-cell" data-label="Detail">Press working sets, vertical pull, shoulders</td></tr>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_sat">Sat</td><td class="focus-cell" data-label="Focus" data-i18n="focus_accessory_weak">Accessory & Weak Points</td><td class="detail-cell" data-label="Detail">Coach-assigned accessory block based on your last 4 weeks</td></tr>
+          <tr class="rest-row"><td class="day-cell" data-label="Day" data-i18n="day_sun">Sun</td><td class="focus-cell" data-label="Focus" data-i18n="focus_rest">Rest</td><td class="detail-cell" data-label="Detail">Full rest day</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Conditioning Line -->
+  <div class="plan-view" id="plan-conditioning">
+    <div class="plan-table-wrap">
+      <table class="plan-table">
+        <thead><tr><th data-i18n="th_day">Day</th><th data-i18n="th_focus">Focus</th><th data-i18n="th_detail">Session Detail</th></tr></thead>
+        <tbody>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_mon">Mon</td><td class="focus-cell" data-label="Focus" data-i18n="focus_intervals">Intervals</td><td class="detail-cell" data-label="Detail">Rower/bike intervals, moderate-high intensity</td></tr>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_tue">Tue</td><td class="focus-cell" data-label="Focus" data-i18n="focus_strength_support">Strength Support</td><td class="detail-cell" data-label="Detail">Full-body compound work at moderate load</td></tr>
+          <tr class="rest-row"><td class="day-cell" data-label="Day" data-i18n="day_wed">Wed</td><td class="focus-cell" data-label="Focus" data-i18n="focus_active_recovery">Active Recovery</td><td class="detail-cell" data-label="Detail">Easy zone-2 cardio, 20-30 min</td></tr>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_thu">Thu</td><td class="focus-cell" data-label="Focus" data-i18n="focus_sled_circuit">Sled & Circuit</td><td class="detail-cell" data-label="Detail">Rotating sled track circuit, sport-specific work</td></tr>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_fri">Fri</td><td class="focus-cell" data-label="Focus" data-i18n="focus_long_intervals">Long Intervals</td><td class="detail-cell" data-label="Detail">Longer work-to-rest intervals, engine-building focus</td></tr>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_sat">Sat</td><td class="focus-cell" data-label="Focus" data-i18n="focus_team_conditioning">Team Conditioning</td><td class="detail-cell" data-label="Detail">Group circuit class, coach-led</td></tr>
+          <tr class="rest-row"><td class="day-cell" data-label="Day" data-i18n="day_sun">Sun</td><td class="focus-cell" data-label="Focus" data-i18n="focus_rest">Rest</td><td class="detail-cell" data-label="Detail">Full rest day</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Recovery Bay -->
+  <div class="plan-view" id="plan-recovery">
+    <div class="plan-table-wrap">
+      <table class="plan-table">
+        <thead><tr><th data-i18n="th_day">Day</th><th data-i18n="th_focus">Focus</th><th data-i18n="th_detail">Session Detail</th></tr></thead>
+        <tbody>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_mon">Mon</td><td class="focus-cell" data-label="Focus" data-i18n="focus_mobility_assessment">Mobility Assessment</td><td class="detail-cell" data-label="Detail">Movement screen, targeted mobility drills</td></tr>
+          <tr class="rest-row"><td class="day-cell" data-label="Day" data-i18n="day_tue">Tue</td><td class="focus-cell" data-label="Focus" data-i18n="focus_open_recovery">Open Recovery</td><td class="detail-cell" data-label="Detail">Self-guided stretch & cold immersion access</td></tr>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_wed">Wed</td><td class="focus-cell" data-label="Focus" data-i18n="focus_guided_stretch">Guided Stretch</td><td class="detail-cell" data-label="Detail">Coach-led mobility studio session</td></tr>
+          <tr class="rest-row"><td class="day-cell" data-label="Day" data-i18n="day_thu">Thu</td><td class="focus-cell" data-label="Focus" data-i18n="focus_open_recovery">Open Recovery</td><td class="detail-cell" data-label="Detail">Self-guided stretch & cold immersion access</td></tr>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_fri">Fri</td><td class="focus-cell" data-label="Focus" data-i18n="focus_injury_specific">Injury-Specific Work</td><td class="detail-cell" data-label="Detail">One-on-one consult for ongoing issues, by appointment</td></tr>
+          <tr><td class="day-cell" data-label="Day" data-i18n="day_sat">Sat</td><td class="focus-cell" data-label="Focus" data-i18n="focus_group_mobility">Group Mobility Class</td><td class="detail-cell" data-label="Detail">Coach-led, open to all membership tiers</td></tr>
+          <tr class="rest-row"><td class="day-cell" data-label="Day" data-i18n="day_sun">Sun</td><td class="focus-cell" data-label="Focus" data-i18n="focus_rest">Rest</td><td class="detail-cell" data-label="Detail">Facility closed for this track</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="nutrition-note" data-i18n="wp_footnote">
+    This is a representative structure, not your actual plan. Real programming is set individually after your first movement assessment and adjusted by your coach every few weeks based on progress.
+  </div>
+
+</section>
+
+<footer class="wrap">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Core Hub</span></div>
+  <div>© 2026 Lavion Core Hub. All rights reserved.</div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".plan-tab").forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      document.querySelectorAll(".plan-tab").forEach(function (t) { t.classList.remove("active"); });
+      document.querySelectorAll(".plan-view").forEach(function (v) { v.classList.remove("active"); });
+      tab.classList.add("active");
+      document.getElementById("plan-" + tab.getAttribute("data-plan")).classList.add("active");
+    });
+  });
+});
+</script>
+</body>
+</html>

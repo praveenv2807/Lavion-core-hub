@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Lavion Core Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body class="admin-body">
+<script>
+  // Runs immediately, before the rest of the page renders, to avoid flashing admin content
+  (function () {
+    var r = sessionStorage.getItem("lavion_role");
+    if (r !== "admin" && r !== "md") window.location.href = "login.html";
+  })();
+</script>
+
+<aside class="admin-sidebar">
+  <div class="logo"><span class="dot"></span><span class="logo-text">Lavion Admin</span></div>
+  <div class="role-badge" id="roleBadge">Admin</div>
+  <nav class="admin-nav">
+    <a href="#" class="active" data-panel="overview">Overview</a>
+    <a href="#" data-panel="bookings">Bookings</a>
+    <a href="#" data-panel="members">Members</a>
+    <a href="#" data-panel="content">Content</a>
+  </nav>
+  <button type="button" class="sidebar-logout" id="sidebarLogout">Sign Out</button>
+</aside>
+
+<main class="admin-main">
+  <div class="admin-topbar">
+    <div style="display:flex;align-items:center;gap:18px;">
+      <a href="index.html" class="back-btn" style="margin-bottom:0;" onclick="if(window.history.length>1){history.back();return false;}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Back</a>
+      <h1 id="panelTitle">Overview</h1>
+    </div>
+    <input class="admin-search" type="text" placeholder="Search…" id="adminSearch">
+  </div>
+
+  <div class="demo-badge">Demo panel — displays mock data only, not connected to a real database</div>
+
+  <div id="panel-overview">
+    <div class="stat-cards">
+      <div class="stat-card"><div class="n" id="overviewMemberCount">1,200</div><div class="l">Active Members</div></div>
+      <div class="stat-card"><div class="n">38</div><div class="l">Classes This Week</div></div>
+      <div class="stat-card"><div class="n">$71.2k</div><div class="l">MRR</div></div>
+      <div class="stat-card"><div class="n">14</div><div class="l">New Signups (7d)</div></div>
+    </div>
+    <div class="panel-block">
+      <h2>Recent Bookings</h2>
+      <div class="admin-table-wrap"><table class="admin-table">
+        <thead><tr><th>Member</th><th>Class</th><th>Date</th><th>Status</th></tr></thead>
+        <tbody id="overviewBookings"></tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <div id="panel-bookings" style="display:none;">
+    <div class="panel-block">
+      <h2>All Bookings</h2>
+      <div class="admin-table-wrap"><table class="admin-table">
+        <thead><tr><th>Member</th><th>Class</th><th>Date</th><th>Time</th><th>Status</th></tr></thead>
+        <tbody id="allBookings"></tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <div id="panel-members" style="display:none;">
+    <div class="panel-block">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+        <h2 style="margin:0;">Members</h2>
+        <button type="button" class="modal-btn" style="width:auto;margin:0;padding:10px 18px;" id="openAddMember">+ Add Member</button>
+      </div>
+      <div class="admin-table-wrap"><table class="admin-table">
+        <thead><tr><th>Name</th><th>Plan</th><th>Joined</th><th>Status</th></tr></thead>
+        <tbody id="membersTable"></tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <div id="panel-content" style="display:none;">
+    <div class="panel-block">
+      <h2>Site Content</h2>
+      <p style="color:var(--mist);font-size:0.92rem;line-height:1.7;max-width:60ch;">
+        In a live build, this panel would let staff edit trainer bios, class schedules, pricing, and gallery images
+        without touching code — writing to the same data source the public site reads from.
+        For this demo, content is static in the HTML/JSON files.
+      </p>
+    </div>
+  </div>
+</main>
+
+<!-- Add Member modal -->
+<div class="modal-overlay" id="addMemberModal">
+  <div class="modal-box">
+    <button class="modal-close" id="addMemberClose">&times;</button>
+    <div class="demo-badge">Saved to this browser only — not a shared database</div>
+    <h3>Add a member</h3>
+    <div class="sub">Adds to the table below and persists in this browser until you clear storage.</div>
+    <div class="form-row"><label>Full name</label><input type="text" id="newMemberName" placeholder="Member name"></div>
+    <div class="form-row"><label>Email</label><input type="email" id="newMemberEmail" placeholder="member@email.com"></div>
+    <div class="form-row">
+      <label>Plan</label>
+      <select id="newMemberPlan" style="width:100%;background:var(--bg);border:1px solid var(--line);padding:12px 14px;color:var(--bone);font-family:var(--body);font-size:0.92rem;">
+        <option>Floor Access</option>
+        <option>Coached</option>
+        <option>All Access</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Status</label>
+      <select id="newMemberStatus" style="width:100%;background:var(--bg);border:1px solid var(--line);padding:12px 14px;color:var(--bone);font-family:var(--body);font-size:0.92rem;">
+        <option value="active">Active</option>
+        <option value="pending">Pending</option>
+      </select>
+    </div>
+    <button class="modal-btn" id="addMemberSubmit">Add Member</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var role = sessionStorage.getItem("lavion_role") || "admin";
+  document.addEventListener("DOMContentLoaded", function () {
+    var badge = document.getElementById("roleBadge");
+    if (badge) badge.textContent = role === "md" ? "MD" : "Admin";
+    var logoutBtn = document.getElementById("sidebarLogout");
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", function () {
+        sessionStorage.removeItem("lavion_role");
+        sessionStorage.removeItem("lavion_email");
+        window.location.href = "login.html";
+      });
+    }
+  });
+})();
+</script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
