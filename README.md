@@ -90,7 +90,7 @@ This is built as an **Upwork portfolio piece**, not a live production gym site. 
 - Trainer photos are still empty gradient blocks.
 ## VERSION 1 
 - V.0.1.0.0
-- TILL NOW FIVE LAN MADE 
+- TILL NOW FIVE LANGUAGES UPDATED TO INCRESE USER BEST EXPERIENCE 
 ## DEPLOYED
 -RENDER because it moslty depends on the backend server so i used render for this.
 
