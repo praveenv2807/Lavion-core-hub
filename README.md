@@ -95,5 +95,6 @@ This is built as an **Upwork portfolio piece**, not a live production gym site. 
 -RENDER because it moslty depends on the backend server so i used render for this.
 
 ## LOGIN [ADMIN,MD PASSWORDS]
+- USER LOGIN - they can use their own account with their password
 - ADMIN PASSWORD - 1234
 - MD PASSWORD - Praveen@2804
