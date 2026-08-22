@@ -98,3 +98,6 @@ This is built as an **Upwork portfolio piece**, not a live production gym site. 
 - USER LOGIN - they can use their own account with their password
 - ADMIN PASSWORD - 1234
 - MD PASSWORD - Praveen@2804
+
+## THIS IS PERSONALIZED WEBSITE WITH A GOLDEN PUNCH THEAME
+Created in the year 2026
