@@ -1,4 +1,4 @@
-# Lavion Core Hub — Phase 1
+# Lavion Core Hub — PHASE 1
 
 Homepage build: cinematic canvas frame-by-frame entrance + multilingual layer (10 languages) + core homepage sections.
 -
