@@ -89,7 +89,7 @@ This is built as an **Upwork portfolio piece**, not a live production gym site. 
 - Gallery images are styled placeholder blocks with labels — swap in real or licensed stock photos per the instructions further up this README.
 - Trainer photos are still empty gradient blocks.
 ## VERSION 1 
-- V.0.1.0
+- V.0.1..0.0
 - TILL NOW FIVE LANGUAGES UPDATED TO INCRESE USER BEST EXPERIENCE 
 ## DEPLOYED
 -RENDER because it moslty depends on the backend server so i used render for this,it to know how render works,previously i used vercel for frontend but i want explore different deployment platform
