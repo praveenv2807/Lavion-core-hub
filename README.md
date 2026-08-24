@@ -92,7 +92,7 @@ This is built as an **Upwork portfolio piece**, not a live production gym site. 
 - V.0.1.0.0
 - TILL NOW FIVE LANGUAGES UPDATED TO INCRESE USER BEST EXPERIENCE 
 ## DEPLOYED
--RENDER because it moslty depends on the backend server so i used render for this.
+-RENDER because it moslty depends on the backend server so i used render for this,it to know how render works.
 
 ## LOGIN [ADMIN,MD PASSWORDS]
 - USER LOGIN - they can use their own account with their password
